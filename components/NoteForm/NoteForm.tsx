@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import Form from "next/form";
 import { useNoteDraftStore } from "@/lib/store/noteStore";
 import { createNote } from "@/lib/api";
 import { Tags, NewNoteData } from "@/types/note";
@@ -86,7 +85,7 @@ export default function NoteForm({ categories }: NoteFormProps) {
   };
 
   return (
-    <Form action={onFormSubmit} className={css.form}>
+    <form action={onFormSubmit} className={css.form}>
       <div className={css.formGroup}>
         <label htmlFor="title">Title</label>
         <input
@@ -141,6 +140,6 @@ export default function NoteForm({ categories }: NoteFormProps) {
           Create note
         </button>
       </div>
-    </Form>
+    </form>
   );
 }
